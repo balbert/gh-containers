@@ -11,7 +11,6 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    container: node:22.14.0
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.vbouq.mongodb.net

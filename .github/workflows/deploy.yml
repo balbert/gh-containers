@@ -11,7 +11,8 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    container: node:22.14.0
+    # container:
+    #  image: node:22.14.0
     env:
       # MongoDB Atlas
       #MONGODB_CONNECTION_PROTOCOL: mongodb+srv
@@ -21,6 +22,7 @@ jobs:
 
       # service container
       MONGODB_CONNECTION_PROTOCOL: mongodb
+      # MONGODB_CLUSTER_ADDRESS: mongodb
       MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: example
@@ -34,7 +36,7 @@ jobs:
           MONGODB_INITDB_ROOT_USERNAME: root
           MONGODB_INITDB_ROOT_PASSWORD: example
     steps:
-      - name: Get Code
+      - name: Get code
         uses: actions/checkout@v3
       - name: Cache dependencies
         uses: actions/cache@v3
